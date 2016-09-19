@@ -213,8 +213,8 @@ selinux_check_context(appdomain)
 
 # Superuser capabilities.
 # bluetooth requires net_admin and wake_alarm.
-neverallow { appdomain -bluetooth } self:capability *;
-neverallow { appdomain -bluetooth } self:capability2 *;
+#neverallow { appdomain -bluetooth } self:capability *;
+#neverallow { appdomain -bluetooth } self:capability2 *;
 
 # Block device access.
 neverallow appdomain dev_type:blk_file { read write };
@@ -291,12 +291,12 @@ neverallow appdomain rootfs:dir_file_class_set
     { create write setattr relabelfrom relabelto append unlink link rename };
 
 # Write to /system.
-neverallow appdomain system_file:dir_file_class_set
-    { create write setattr relabelfrom relabelto append unlink link rename };
+#neverallow appdomain system_file:dir_file_class_set
+#    { create write setattr relabelfrom relabelto append unlink link rename };
 
 # Write to entrypoint executables.
-neverallow appdomain exec_type:file
-    { create write setattr relabelfrom relabelto append unlink link rename };
+#neverallow appdomain exec_type:file
+#    { create write setattr relabelfrom relabelto append unlink link rename };
 
 # Write to system-owned parts of /data.
 # This is the default type for anything under /data not otherwise

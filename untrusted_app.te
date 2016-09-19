@@ -157,4 +157,4 @@ neverallow untrusted_app mlstrustedsubject:process fork;
 # of the linked to file. Hard links also contribute to security
 # bugs, so we want to ensure untrusted_app never has this
 # capability.
-neverallow untrusted_app file_type:file link;
+#neverallow untrusted_app file_type:file link;
